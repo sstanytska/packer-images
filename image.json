@@ -7,5 +7,22 @@
         "ssh_username": "ec2-user",
         "ami_name": "sstanytska-{{timestamp}}"
 
-    }]
-}
+    }],
+    "provisioners":  [
+        {
+        "type": "shell",
+        "inline": [
+            "sudo yum install httpd -y",
+            "sudo yum install php -y",
+            "sudo touch /tmp/testfile",
+            "sudo useradd bob",
+            "sudo systemctl start httpd"
+        ]
+     },
+     {
+         "type": "file",
+         "source": "/etc/passwd",
+         "destination": "/tmp/user_list"
+         
+     }
+]
