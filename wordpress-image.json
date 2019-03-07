@@ -7,8 +7,8 @@
               "type": "amazon-ebs",
               "access_key": "{{user `aws_access_key`}}",
               "secret_key": "{{user `aws_secret_key`}}",
-              "region": "eu-west-1",
-              "source_ami": "ami-9cbe9be5",
+              "region": "us-east-2",
+              "source_ami": "ami-0f7dedf93c3cca5b1",
               "instance_type": "t2.micro",
               "ssh_username": "ec2-user",
               "ami_name": "packer-wordpress {{ timestamp }}"
